@@ -1,55 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Energy Advisor</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        
-        .container1{
-            background-color: #1261A0;
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+        }
+
+        .content {
+            margin-top: 70px;
+        }
+
+        .navbar-brand img {
+            max-height: 70px;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: bold;
+        }
+
+        .img {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 20px;
+            background-image: url('section-img.jpg');
+            max-width: 100%;
+        }
+
+        .h {
+            color: white;
+            font-size: 36px;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            max-width: 100%;
+            word-wrap: break-word;
+            box-sizing: border-box;
+        }
+
+        .h h2 {
+            color: white;
+            margin-bottom: 10px;
+            white-space: normal;
+        }
+
+        .h p {
+            font-size: 16px;
+            margin: 0;
+            white-space: normal;
+        }
+
+        .typing h2 {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            border-right: 0.15em solid orange;
+            animation: typing-h2 4s steps(40, end) 1, typing-p 8s steps(40, end) 1;
+        }
+
+        @keyframes typing-h2 {
+            from { width: 0; }
+            to { width: 15ch; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: orange; }
+        }
+
+        @keyframes cursor-rotate {
+            0% { border-right-color: orange; transform: rotate(0deg); }
+            100% { border-right-color: transparent; transform: rotate(90deg); }
+        }
+
+        .container1 {
+            background-color: #1261A0;
+            padding: 20px; /* Add padding to ensure no overflow */
+        }
+
         .image-container {
             text-align: center;
             margin-bottom: 20px;
-            
             opacity: 0;
             animation: fadeInAnimation 1s ease-in-out forwards;
         }
+
         .image-container img {
             border-radius: 50%;
             margin-bottom: 10px;
             margin-top: 10px;
+            max-width: 100%; /* Ensure images don't cause overflow */
         }
-        /* Default styles (unchanged) */
 
-@media (max-width: 768px) {
-  .figure {
-    margin-bottom: 20px;  /* Add space between image and caption */
-  }
-  .figure-caption {
-    align-items: flex-start;  /* Change alignment for flexbox approach */
-  }
-}
+        @media (max-width: 768px) {
+            .figure {
+                margin-bottom: 20px;
+            }
 
-.text-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  color: white; /* Adjust text color for better visibility on background */
-}
+            .figure-caption {
+                align-items: flex-start;
+            }
+        }
 
+        .text-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            color: white;
+        }
 
         @keyframes fadeInAnimation {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
+
         .figure-caption {
             display: flex;
             flex-direction: column;
@@ -57,151 +149,55 @@
             height: 100%;
         }
 
-        .figure img{
-            width:auto;
+        .figure img {
+            width: auto;
             max-height: 800px;
+            max-width: 100%;
         }
 
-    body{
-    font-family: 'Arial', sans-serif;
-    background-color: #f2f2f2; /* Light gray background color */
-    margin: 0;
-    padding: 0;
-        max-width: 100%;
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
         }
 
-  
-
-
-ul {
-    list-style-type: none;
-    padding:0;
-    display: flex; /* Use flexbox for horizontal alignment */
-}
-
-li {
-    margin-right: 10px; /* Add some spacing between buttons */
-}
-
-/* Style the links as buttons */
-a {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #fff;
-     /* Green button color */
-    border-radius: 5px;
-}
-
-
-a:hover {
-    background-color: #1261A0; /* Darker green on hover */
-}
-header{
-    height: 30;
-    color:green;
-    background-color:whitesmoke
-    
-}
-
-img{
-    height: 80px;
-    width: 80px;
-    border-radius: 4px;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 15px;
-}nav{
-    float: right;
-
-} 
-.navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1030; /* Ensure the navbar is on top of other elements */
-        }
- .content {
-            margin-top: 70px; /* Ensure content is not hidden behind the navbar */
-        }
- .navbar-brand img {
-            max-height: 70px; /* Ensure the logo fits well within the navbar */
-        }
-        .navbar-nav .nav-link {
-            font-weight: bold; /* Make the navigation text bold */
-        }
-.img{
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    max-width: 100%;
-   
-    background-image: url(section-img.jpg);
-    
-
-} 
- 
-.h{
-    color: white;
-    font-size: 36px;
-    margin: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding:10px;
-    word-wrap: break-word; /* Break words that are too long */
-    box-sizing: border-box;
-    max-width: 100%;
-}
-.h h2 {color: white;
-            margin-bottom: 10px; 
-        white-space: normal;/* Adds space between the heading and paragraph */
+        li {
+            margin-right: 10px;
         }
 
-        .h p {
-             font-size: 16px;
-            margin: 0;
-            white-space: normal;
-        }
-        .typing h2{
-            white-space: nowrap; /* Prevents text wrapping */
-            overflow: hidden; /* Ensures text is hidden until animated */
-            display: inline-block; /* Keeps text on a single line */
-            border-right: 0.15em solid orange; /* Cursor effect */
-            animation: typing-h1 4s steps(40, end) 1, typing-p 8s steps(40, end) 1; /* Apply animation */
-        }
-        .typing h2 {
-       animation: typing-h1 4s steps(40, end) 1, typing-p 8s steps(80, end) 1; /* Apply animation */
-        }
-       
-        @keyframes typing-h2 {
-            from { width: 0 }
-            to { width: 15ch }
-        }
-     
-   
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: orange; }
-        }
-        @keyframes cursor-rotate {
-            0% { border-right-color: orange; transform: rotate(0deg); }
-            100% { border-right-color: transparent; transform: rotate(90deg); }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
         }
 
-.quick{
-    display:block;
-}
+        a:hover {
+            background-color: #1261A0;
+        }
+
+        header {
+            height: 30px;
+            color: green;
+            background-color: whitesmoke;
+        }
+
+        nav {
+            float: right;
+        }
+
+        .quick {
+            display: block;
+        }
     </style>
-     <header>
-           
-            
+</head>
+<body>
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
-                <img alt="" src="akiliedgeLogo.jpg" />
-                </a>
+                <img alt="" src="akiliedgeLogo.jpg">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -230,174 +226,92 @@ img{
                     </li>
                 </ul>
             </div>
-       
-</nav>
+        </nav>
     </header>
-</head>
 
-<body>
     <section class="img">
         <div class="h typing">
-        <h2 >Akiliedge Solutions</h2>
-        <p>Akiliedge Solutions you get all IT related solution that are sustainable. come with your problem and go back with solution </p>
-    </div>
+            <h2>Akiliedge Solutions</h2>
+            <p>Akiliedge Solutions you get all IT related solution that are sustainable. come with your problem and go back with solution.</p>
+        </div>
     </section>
 
-
-      
-
-
-
-
-
-
-
-
-<div class="container1 mt-5">
-  <div class="row">
-    <div class="col-md-4 d-flex justify-content-center align-items-center flex-column">
-      <div class="image-container">
-        <img src="ai_bss.jpg" class="img-fluid" alt="Image 1">
-        <p>Text for Image 1</p>
-      </div>
-    </div>
-    <div class="col-md-4 d-flex justify-content-center align-items-center flex-column">
-      <div class="image-container">
-        <img src="ai_bss.jpg" class="img-fluid" alt="Image 2">
-        <p>Text for Image 2</p>
-      </div>
-    </div>
-    <div class="col-md-4 d-flex justify-content-center align-items-center flex-column">
-      <div class="image-container">
-        <img src="ai_bss.jpg" class="img-fluid" alt="Image 3">
-        <p>Text for Image 3</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-           
-<div class="container2 mt-5">
-    <div class="row">
-      <div class="col-md-6">
-        <figure class="figure">
-          <img src="products.jpg" class="figure-img img-fluid rounded" alt="Placeholder Image">
-        </figure>
-      </div>
-      <div class="col-md-6 d-flex justify-content-center">
-        <figcaption class="figure-caption" style="padding: 30px;">
-          <h5>Our Services</h5>
-          <p>We provide IT services that are customer based we are at the forefront in ensuring that our client do what they are best at and we support and boost them with any Tech service they need </p>
-        </figcaption>
-      </div>
-    </div>
-  </div>
-  
-  
-
-       
-
-        <div class="container3 mt-5">
-            <div class="row">
-                
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <figcaption class="figure-caption" style="padding: 30px;">
-                        <h5>our products</h5>
-                        <p>At Akilkiedge Solutions we are devoted to ensure that our client get customized world class products that are sustainable and up to date that enable them to compete in the global market.As Akiliedge we understand the need of Sustainable Solution that so we creatively tailor our client with products well thought out .</p>
-                    </figcaption>
+    <div class="container1 mt-5">
+        <div class="row">
+            <div class="col-md-4 d-flex justify-content-center align-items-center flex-column">
+                <div class="image-container">
+                    <img src="ai_bss.jpg" class="img-fluid" alt="Image 1">
+                    <p>Text for Image 1</p>
                 </div>
-                
-                <div class="col-md-6">
-                    <figure class="figure">
-                        <img src="services.jpg" class="figure-img img-fluid rounded" alt="Placeholder Image">
-                    </figure>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center flex-column">
+                <div class="image-container">
+                    <img src="ai_bss.jpg" class="img-fluid" alt="Image 2">
+                    <p>Text for Image 2</p>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center flex-column">
+                <div class="image-container">
+                    <img src="ai_bss.jpg" class="img-fluid" alt="Image 3">
+                    <p>Text for Image 3</p>
                 </div>
             </div>
         </div>
-    
-      
+    </div>
 
+    <div class="container2 mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <figure class="figure">
+                    <img src="products.jpg" class="figure-img img-fluid rounded" alt="Placeholder Image">
+                </figure>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+                <figcaption class="figure-caption" style="padding: 30px;">
+                    <h5>Our Services</h5>
+                    <p>We provide IT services that are customer based we are at the forefront in ensuring that our client do what they are best at and we support and boost them with any Tech service they need.</p>
+                </figcaption>
+            </div>
+        </div>
+    </div>
 
+    <div class="container3 mt-5">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <figcaption class="figure-caption" style="padding: 30px;">
+                    <h5>Our Products</h5>
+                    <p>At Akilkiedge Solutions we are devoted to ensure that our clients get customized world class products that are sustainable and up to date that enable them to compete in the global market. As Akiliedge we understand the need of Sustainable Solutions, so we creatively tailor our clients with well-thought-out products.</p>
+                </figcaption>
+            </div>
+            <div class="col-md-6">
+                <figure class="figure">
+                    <img src="services.jpg" class="figure-img img-fluid rounded" alt="Placeholder Image">
+                </figure>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-        
-  
-        <!--<footer style="background-color:gray;" class="bg-light text-dark mt-5">
-            <div class="container py-4">
-                <div class="row">
-                    
-                    <div class="col-md-4 mb-3">
-                        <a href="#" class="navbar-brand">
-                            <img src="akiliedgeLogo.jpg" alt="Brand Logo" class="img-fluid">
-                        </a>
-                    </div>
-             
-                    <div class="col-md-8 mb-3">
-                      
-                        <ul class="list-unstyled">
-                            <li><a href="product.html" class="text-dark">Products</a></li>
-                            <li><a href="service.html" class="text-dark">services</a></li>
-                            <li><a href="career.html" class="text-dark">Career</a></li>
-                            <li><a href="home" class="text-dark">Home</a></li>
-                        </ul>
-                    </div>
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6 text-md-right">
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About</a></li>
+                        <li><a href="#" class="text-white">Services</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="row">
-                    <div class="col text-center">
-                        <p class="mb-0">&copy; 2024 Your Company. All rights reserved.</p>
-                    </div>
+                <div class="col-md-6">
+                    <h5 style="color: #1261A0;">Akiliedge Solutions</h5>
+                    <p style="text-align: justify;">&copy; Akiliedge Solutions 2024. All rights reserved.</p>
                 </div>
             </div>
-        </footer>-->
-        <footer class="bg-dark text-white mt-5">
-            <div class="container py-4">
-                <div class="row">
-                  <!--  <div class="col-md-4 mb-3">
-                        <a href="#" class="navbar-brand">
-                            <img src="assets/akiliedgeLogo.jpg" alt="Brand Logo" class="img-fluid">
-                        </a>
-                    </div>-->
-                  
-                    <div class="col-md-6 text-md-right">
-                      
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Home</a></li>
-                            <li><a href="#" class="text-white">About</a></li>
-                            <li><a href="#" class="text-white">Services</a></li>
-                            <li><a href="#" class="text-white">Contact</a></li>
-                        </ul>
-                        
-                    </div>
-                    <div class="col-md-6">
-                        <h5 style="color: #1261A0;">Akiliedge Solutions</h5>
-                        <p style="text-align: justify;">&copy;Akiliedge Solutions 2024 . All rights reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        </div>
+    </footer>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
-
 </html>
