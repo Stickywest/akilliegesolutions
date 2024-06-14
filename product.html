@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .header {
+            background-color: rgb(106, 16, 16);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .search-bar {
+            margin-top: -30px;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 60%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: rgb(106, 16, 16);
+            color: white;
+        }
+
+        .product-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .product-details {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .features-list {
+            padding-left: 20px;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #d9534f;
+        }
+
+        .add-to-cart {
+            background-color: rgb(106, 16, 16);
+            color: white;
+        }
+
+        .related-products .card {
+            margin-bottom: 20px;
+        }
+
+        .rating {
+            color: gold;
+        }
+
+        .review {
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Product Name</h1>
+            <p>Discover the amazing features of our product</p>
+        </div>
+    </header>
+
+    <div class="search-bar mt-4 mb-4">
+        <form>
+            <input type="text" placeholder="Search for products...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-gallery">
+                    <img src="https://via.placeholder.com/300x200" alt="Product Image 1">
+                    <img src="https://via.placeholder.com/300x200" alt="Product Image 2" class="mt-3">
+                    <img src="https://via.placeholder.com/300x200" alt="Product Image 3" class="mt-3">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-description">
+                    <h2>Product Name</h2>
+                    <p>This is a detailed description of the product, highlighting its main features and benefits. It includes information about what makes the product unique and why customers should consider purchasing it.</p>
+                    <h4>Features:</h4>
+                    <ul class="features-list">
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                        <li>Feature 3</li>
+                        <li>Feature 4</li>
+                    </ul>
+                    <div class="price">$99.99</div>
+                    <button class="btn add-to-cart mt-3">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mt-5">
+        <h3>Customer Reviews</h3>
+        <div class="review">
+            <p><strong>John Doe</strong> <span class="rating">★★★★☆</span></p>
+            <p>Great product! Really happy with my purchase.</p>
+        </div>
+        <div class="review">
+            <p><strong>Jane Smith</strong> <span class="rating">★★★★★</span></p>
+            <p>Excellent quality and fast shipping. Highly recommend!</p>
+        </div>
+    </section>
+
+    <section class="container mt-5">
+        <h3>Related Products</h3>
+        <div class="row related-products">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Related Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Related Product 1</h5>
+                        <p class="card-text">$49.99</p>
+                        <a href="#" class="btn btn-primary">View Product</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Related Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Related Product 2</h5>
+                        <p class="card-text">$59.99</p>
+                        <a href="#" class="btn btn-primary">View Product</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Related Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Related Product 3</h5>
+                        <p class="card-text">$39.99</p>
+                        <a href="#" class="btn btn-primary">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Akiliedge Solutions</h5>
+                    <p>&copy; 2024 Akiliedge Solutions. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="service.html" class="text-white">Services</a></li>
+                        <li><a href="product.html" class="text-white">Products</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include JavaScript files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
