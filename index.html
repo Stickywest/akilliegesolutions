@@ -193,6 +193,34 @@
         .quick {
             display: block;
         }
+
+        /*this is the footer section */
+
+
+        
+        footer {
+  background-color: #f2f2f2; /* Light gray background */
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1; /* Make columns same width */
+  padding: 10px;
+  text-align: center;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.8em;
+  color: #888; /* Light gray text */
+}
+
     </style>
 </head>
 <body>
@@ -294,15 +322,50 @@
         </div>
     </div>
 
-    <footer class="bg-dark text-white mt-5">
+
+    <footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <p>AKILIEDGE SOLUTIONS</p>
+      <ul>
+        <li><a href="#">Theme Design</a></li>
+        <li><a href="#">Plugin Design</a></li>
+        <li><a href="#">Wordpress</a></li>
+        <li><a href="#">Joomla Template</a></li>
+        <li><a href="#">HTML Template</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <p>Product</p>
+      <ul>
+        <li><a href="#">Useful Link</a></li>
+      </ul>
+      <p>Customer Service</p>
+    </div>
+    <div class="footer-column">
+      <p>Address</p>
+      <address>
+        127, Highway Tower<br>
+        R400<br>
+        Nakuru, Kenya
+      </address>
+    </div>
+  </div>
+  <p class="copyright">All rights reserved by @Akiliedge Solutions 2020</p>
+</footer>
+
+
+    <!--<footer class="bg-dark text-white mt-5">
         <div class="container py-4">
             <div class="row">
                 <div class="col-md-6 text-md-right">
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-white">Home</a></li>
-                        <li><a href="#" class="text-white">About</a></li>
-                        <li><a href="#" class="text-white">Services</a></li>
-                        <li><a href="#" class="text-white">Contact</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="product.html" class="text-white">Products</a></li>
+                        <li><a href="service.html" class="text-white">Services</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                        <li><a href="contact.html" class="text-white">Team Up</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">
@@ -311,7 +374,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>-->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
